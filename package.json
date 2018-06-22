@@ -11,11 +11,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:js": "node_modules/.bin/eslint src/ --ext .js --ext .jsx",
+    "lint:scss": "node_modules/.bin/stylelint src/**/*.scss --syntax scss",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
     "stylelint": "^9.3.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-config-standard": "^18.2.0",
