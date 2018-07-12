@@ -1,0 +1,15 @@
+.square {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+
+    width: 100px;
+    min-height: 100px;
+
+    cursor: pointer;
+
+    border: 1px solid lightgray;
+    background: none;
+    box-shadow: none;
+}
