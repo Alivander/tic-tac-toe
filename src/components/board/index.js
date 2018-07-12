@@ -12,6 +12,7 @@ class Board extends Component {
                 <Square
                     key={i}
                     value={value}
+                    win={this.props.win && this.props.win.some(n => n === i)}
                     onClick={() => this.props.onClick(i)}
                 />
             );

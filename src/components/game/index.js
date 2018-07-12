@@ -59,19 +59,22 @@ class Game extends Component {
 
     render() {
         const current = this.state.history[this.state.stepNumber];
-        const winner = getWinner(current.squares);
+        const win = getWinner(current.squares);
         let status;
 
-        if (winner) {
-            status = `Winner: ${winner}`;
-        } else {
+        if (win) {
+            status = `Winner: ${win.winner}`;
+        } else if (current.squares.some(squres => !squres)) {
             status = `Next player: ${this.state.xIsNext ? 'X' : 'O'}`;
+        } else {
+            status = 'The game ended in a draw';
         }
 
         return (
             <div className={b()}>
                 <Board
                     squares={current.squares}
+                    win={win && win.combination}
                     onClick={i => this.handleClick(i)}
                     />
                 <div>{status}</div>
