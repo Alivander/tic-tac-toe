@@ -8,7 +8,7 @@ module.exports = {
         'jsx-a11y'
     ],
     rules: {
-        indent: ['error', 4, {
+        'indent': ['error', 4, {
             SwitchCase: 1,
             VariableDeclarator: 1,
             outerIIFEBody: 1,
@@ -31,6 +31,9 @@ module.exports = {
                 'JSXElement',
                 'JSXElement *'
             ]
+        }],
+        'no-plusplus': ['error', {
+            "allowForLoopAfterthoughts": true
         }]
     }
 };
