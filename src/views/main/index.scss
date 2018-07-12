@@ -1,8 +1,16 @@
 @import '../../common/variables.scss';
 
 .main {
-    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     min-height: 100vh;
-    margin: auto;
     padding: $s-field;
+}
+
+.main__title,
+.main__welcom {
+    text-align: center;
 }

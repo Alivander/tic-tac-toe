@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import b_ from 'b_';
 import Board from '../board';
 import getWinner from '../../util/getWinner';
+import './index.css';
 
 const b = b_.with('game');
+const btn = b_.with('button');
 
 class Game extends Component {
     constructor(props) {
@@ -47,6 +49,7 @@ class Game extends Component {
                 return (
                     <li key={move}>
                         <button
+                            className={btn()}
                             type='button'
                             onClick={() => this.jumpTo(move)}
                             >
@@ -77,8 +80,10 @@ class Game extends Component {
                     win={win && win.combination}
                     onClick={i => this.handleClick(i)}
                     />
-                <div>{status}</div>
-                <ol>{this.renderMoves()}</ol>
+                <div className={b('info')}>
+                    <p className={b('status')}>{status}</p>
+                    <ul className={b('moves')}>{this.renderMoves()}</ul>
+                </div>
             </div>
         );
     }

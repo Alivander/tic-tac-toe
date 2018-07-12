@@ -11,7 +11,7 @@ function Main() {
             <header className={b('header')}>
                 <h1 className={b('title')}>Tic-Tac-Toe</h1>
             </header>
-            <p className={b('game')}>
+            <p className={b('welcom')}>
                 Welcom to Game! :)
             </p>
             <Game />
